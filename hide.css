@@ -1,0 +1,20 @@
+/* Правая колонка: место сохраняется, чтобы вёрстка письма не прыгала. */
+[data-noads-hidden="fade"] {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Строки внутри списка писем: убираем из потока целиком. */
+[data-noads-hidden="collapse"] {
+    display: none !important;
+}
+
+/* Блок в шапке: сам блок остаётся и держит высоту карточки вместе со своим
+   скруглением верхних углов, прячется только содержимое. */
+[data-noads-hidden="mask"] {
+    pointer-events: none !important;
+}
+
+[data-noads-hidden="mask"] > * {
+    visibility: hidden !important;
+}

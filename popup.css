@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-family: -apple-system, system-ui, sans-serif;
+    font-size: 14px;
+}
+
+#container {
+    width: 220px;
+    padding: 14px;
+}
+
+#row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+#status {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+}
+
+#status.ok {
+    color: #2e7d32;
+}
+
+#status.bad {
+    color: #c62828;
+}
