@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"priority": 1,
+		"action": { "type": "block" },
+		"condition": {
+			"urlFilter": "ntp-sandwich=1",
+			"resourceTypes": ["sub_frame"],
+			"requestDomains": ["yandex.ru"]
+		}
+	},
+	{
+		"id": 2,
+		"priority": 1,
+		"action": { "type": "block" },
+		"condition": {
+			"urlFilter": "rythm-feed.js"
+		}
+	}
+]

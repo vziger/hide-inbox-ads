@@ -1,7 +1,7 @@
 {
 	"name": "Hide mail.ru inbox ads",
-	"description": "Скрывает рекламный блок в правой колонке e.mail.ru",
-	"version": "1.0",
+	"description": "Скрывает рекламу в e.mail.ru, Яндекс.Переводчике, Яндекс.Погоде",
+	"version": "1.1",
 	"manifest_version": 3,
 	"icons": {
 		"16": "icons/icon16.png",
@@ -18,7 +18,8 @@
 			"128": "icons/icon128.png"
 		}
 	},
-	"permissions": ["storage", "activeTab"],
+	"permissions": ["storage", "activeTab", "declarativeNetRequest"],
+	"host_permissions": ["*://yandex.ru/*", "*://*.yandex.ru/*", "*://*.naydex.net/*"],
 	"content_scripts": [
 		{
 			"matches": ["https://e.mail.ru/*"],
@@ -26,6 +27,29 @@
 			"css": ["hide.css"],
 			"run_at": "document_start",
 			"all_frames": true
+		},
+		{
+			"matches": ["https://translate.yandex.ru/*"],
+			"js": ["yandex.js"],
+			"css": ["hide.css"],
+			"run_at": "document_start",
+			"all_frames": false
+		},
+		{
+			"matches": ["https://yandex.ru/pogoda/*"],
+			"js": ["pogoda.js"],
+			"css": ["hide.css"],
+			"run_at": "document_start",
+			"all_frames": false
 		}
-	]
+	],
+	"declarative_net_request": {
+		"rule_resources": [
+			{
+				"id": "yandex_ntp",
+				"enabled": true,
+				"path": "rules.json"
+			}
+		]
+	}
 }
